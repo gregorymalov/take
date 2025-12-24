@@ -1,38 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Базовые стили для секций */
+.section {
+  min-height: 100vh;
+  padding: 80px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 16px;
+    min-height: auto;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* Неоновые эффекты */
+.neon-text {
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5),
+               0 0 20px rgba(0, 255, 255, 0.3),
+               0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+.neon-pink {
+  color: #ff006e;
+  text-shadow: 0 0 10px rgba(255, 0, 110, 0.8),
+               0 0 20px rgba(255, 0, 110, 0.5),
+               0 0 30px rgba(255, 0, 110, 0.3);
+}
+
+.neon-cyan {
+  color: #00f5ff;
+  text-shadow: 0 0 10px rgba(0, 245, 255, 0.8),
+               0 0 20px rgba(0, 245, 255, 0.5),
+               0 0 30px rgba(0, 245, 255, 0.3);
+}
+
+.neon-yellow {
+  color: #ffbe0b;
+  text-shadow: 0 0 10px rgba(255, 190, 11, 0.8),
+               0 0 20px rgba(255, 190, 11, 0.5),
+               0 0 30px rgba(255, 190, 11, 0.3);
+}
+
+/* Кнопки */
+.cta-button {
+  background: linear-gradient(135deg, #ff006e 0%, #8338ec 50%, #00f5ff 100%);
+  background-size: 200% 200%;
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 20px rgba(255, 0, 110, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 40px rgba(255, 0, 110, 0.7),
+              0 0 60px rgba(131, 56, 236, 0.5),
+              0 10px 25px rgba(0, 0, 0, 0.4);
+  background-position: 100% 0;
+}
+
+@media (max-width: 768px) {
+  .cta-button {
+    padding: 14px 30px;
+    font-size: 16px;
+  }
+}
+
+/* Контейнеры */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
   }
 }

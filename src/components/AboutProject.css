@@ -1,0 +1,136 @@
+.about-project {
+  background: radial-gradient(circle at 100% 50%, rgba(255, 0, 110, 0.1) 0%, transparent 50%),
+              #0a0a0a;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1400px;
+}
+
+.about-image {
+  position: relative;
+}
+
+.camera-image {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 50px rgba(255, 190, 11, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.camera-image:hover {
+  transform: scale(1.05);
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.section-title {
+  font-size: 48px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.project-description {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.description-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.description-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 245, 255, 0.3);
+  transform: translateX(10px);
+}
+
+.icon {
+  font-size: 36px;
+  min-width: 50px;
+  text-align: center;
+}
+
+.description-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #00f5ff;
+}
+
+.description-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc;
+  margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 968px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .section-title {
+    font-size: 36px;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .description-item {
+    padding: 20px;
+  }
+
+  .icon {
+    font-size: 30px;
+    min-width: 40px;
+  }
+
+  .description-item h3 {
+    font-size: 18px;
+  }
+
+  .description-item p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 28px;
+  }
+
+  .description-item {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .icon {
+    font-size: 32px;
+  }
+
+  .description-item:hover {
+    transform: translateX(0);
+  }
+}
